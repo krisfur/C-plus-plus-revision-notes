@@ -135,6 +135,13 @@ int main() //all of the program happens in main
 	{
 		std::cout << i << std::endl;
 	}
+	//outputting into an array
+	for (int i = 0; i < 10; ++i) 
+	{
+		r[i] = rand();
+		std::cout << r[i] << std::endl; //prints newly updated array every pass
+	}
+	
 	
 	//for loop for running through a set of data - like for each loop in C# or for loop in Python
 	string str {"Hello!"};
