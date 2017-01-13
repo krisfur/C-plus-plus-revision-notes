@@ -1,3 +1,11 @@
+//this is a comment
+/*
+this
+is a multiline
+comment
+*/
+
+
 //way to include libraries
 #include <iostream>
 #include <string>
@@ -41,7 +49,7 @@ int main() //all of the program happens in main
 	//fortunately libraries help you go around it like the <string> library
 	
 	
-	//changing datatypes - you don't!!!! it's really bad in C++
+	//changing datatypes - it's really bad in C++
 	//example of changing a string input into int using a library:
 	//#include <sstream>
 	string mystr ("1204");
@@ -49,15 +57,48 @@ int main() //all of the program happens in main
 	stringstream(mystr) >> myint
 	//pain is real
 	
+	//casting from into to float and such is relatively easy
+	int a;
+	float b = a;
+	//now you have a float b based on value from a
+	
+	//putting in ints and using them as floats
+	int i;
+	int j;
+	float k = int(i)/j;
+	
+	
+	
+	
 	
 	//maths
+	//you will need the <cmath> library
+	//if you want to use scientific constants make sure you define it:
+	#define _USE_MATH_DEFINES
+	#include <cmath>
+	double a = 3;
+	double b = 4;
+	double z = 5;
+	double c = a+b;
+	double d = z*(a+b); //everything is as simple as you think
 	
+	b+=3 //changes b to a value b+3
+	b-=3 // changes b to a value b-3
+	a++ //adds one to a, but does it after thigs such as print
+	++a //also adds one to a, but does it before things such as print
+
 	
+	//using advanced functions - need to call them from cmath
+	double e = std::pow(a,2) //to use powers use pow(number, power)
+	double f = std::sqrt(a) //square root is sqrt(number)
+	double g = std::cos(30) //using a cosine, same for tan, atan etc.
+	double h = std::exp(a) //exponential
 	
-	
-	
-	
-	
+	//constants
+	//M_PI is pi
+	//M_E is e
+	//so you could use std::pow(M_E,2) instead of std::exp(2)
+	//those constants are NOT always there. Newer compilers usually won't have them, in new MinGW you need the #define _USE_MATH_DEFINES statement to enable them
 	
 	
 	
