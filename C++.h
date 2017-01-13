@@ -89,10 +89,10 @@ int main() //all of the program happens in main
 
 	
 	//using advanced functions - need to call them from cmath
-	double e = std::pow(a,2) //to use powers use pow(number, power)
-	double f = std::sqrt(a) //square root is sqrt(number)
-	double g = std::cos(30) //using a cosine, same for tan, atan etc.
-	double h = std::exp(a) //exponential
+	double e = std::pow(a,2); //to use powers use pow(number, power)
+	double f = std::sqrt(a); //square root is sqrt(number)
+	double g = std::cos(30); //using a cosine, same for tan, atan etc.
+	double h = std::exp(a); //exponential
 	
 	//constants
 	//M_PI is pi
