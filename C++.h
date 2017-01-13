@@ -169,14 +169,32 @@ int main() //all of the program happens in main
 	
 	//classes
 	
+	//create the class OUTSIDE of main (just like methods - better before to not have to pre-declare it)
+	class className
+	{
+		//properties public or private
+		//public can be called from outside the class, private can't and are used for inside calculations and such
+		std::string name;
+		double length;
+		int age;
+	}
+	//in main call it like this:
+	className object1; //declare a new object called object1 based on class className
+	className object2;
 	
+	//specify properties for object1
+	object1.name = "John";
+	object1.length=22.4;
+	object1.age=13;
 	
+	//same for object 2
+	object1.name = "Morgan";
+	object1.length=28.9;
+	object1.age=19;	
 	
-	
-	
-	
-	
-	
+	//then you can easily call those properties
+	std::cout << "Name of object 1 is: " << object1.name << std::endl;
+	std::cout << "Sum of ages of object1 and object2" << object1.age+object2.age << std::endl;
 
 	
 	
