@@ -21,6 +21,8 @@ int main() //all of the program happens in main
     std::cout << "Hello, World!" << std::endl; //use std::endl; to end a line
 	std::cout << "Hello, World!\n"; //also gives a new line
 	
+	//you can use setw(int) to set the spacewidth of output
+	
 	//declaring variables
 	int i;
 	i=10;
@@ -35,6 +37,9 @@ int main() //all of the program happens in main
 	std::string name;
 	geline(std::cin, name);
 	std::cout << name;
+	//C++ has very weak in-built capabilities of working with strings - a language made for robots
+	//fortunately libraries help you go around it like the <string> library
+	
 	
 	//changing datatypes - you don't!!!! it's really bad in C++
 	//example of changing a string input into int using a library:
@@ -59,16 +64,30 @@ int main() //all of the program happens in main
 	
 	//arrays
 	
+	//new array
+	//structure is: datatype arrayName[number of thing in an array] = {items, in, the, array}
 	
+	double numbers[]={1,2.4,3.6,7.8};
+	//not giving the array size makes an array just the size needed, you can declare an array without doing anything by using:
+	//double numbers[];
 	
+	//you can change a single thing in an array like this:
+	numbers[3]=4.5; //ofc we are counting from 0
 	
+	//accessing array elements:
+	std::cout << numbers[3] << std::endl;
+	//prints 4.5
 	
+	//declaring two-dimensional arrays
+	//type name[number of rows][number of items in a row/colums];
+	double 2dnumbers [][];
 	
+	//one line initialising:
+	double results[2][3]={ {1,2,3}, {4,5,6} }
 	
-	
-	
-	
-	
+	//accessing items in 2d arrays:
+	std::cout << resutls[1][2] << std::endl //prints 3rd element from 2nd row
+	//output: 6
 	
 	
 	
