@@ -36,6 +36,8 @@ int main() //all of the program happens in main
 	i=10;
 	//or
 	int i = 10;
+	//or
+	int i (10);
 	
 	//input number
 	std::cin >> i;
@@ -65,9 +67,7 @@ int main() //all of the program happens in main
 	//putting in ints and using them as floats
 	int i;
 	int j;
-	float k = int(i)/j;
-	
-	
+	float k = int(i)/j; //C++ style cast
 	
 	
 	
@@ -166,10 +166,8 @@ int main() //all of the program happens in main
 	{
 		std::cout << "Guess a number between 1 and 10: ";
 		std:cin >> i
-	} while (i==5)
-	{
-		std::cout << "You guessed it!" << std::endl;
-	}
+	} while (i==5); //semicolon at the end of the finish condition
+	
 	
 	//for loop - for(initialization; condition to keep going; increase);
 	for(int i=1; i<10; i++);
