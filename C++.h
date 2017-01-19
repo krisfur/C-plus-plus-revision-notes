@@ -194,13 +194,14 @@ int main() //all of the program happens in main
 	switch (x) {
 	case 1:
 		std::cout << "x is 1";
-		break;
+		break; //you use break since otherwise the default case will still be executed - break makes it so it skips the default case
 	case 2:
 		std::cout << "x is 2";
 		break;
 	case 3:
 	case 4:
 		std::cout << "x is 3 or 4";
+		break;
 	default:
 		std::cout << "value of x unknown";
 	}
