@@ -38,6 +38,7 @@ int main() //all of the program happens in main
 	int i = 10;
 	//or
 	int i (10);
+	bool really = 1; //0 for false, anything above 0 for true
 	
 	//input number
 	std::cin >> i;
@@ -153,7 +154,7 @@ int main() //all of the program happens in main
 	
 	//while loop - same as C#
 	int i=1;
-	while(i<=10) //can use a bool set to True or not increment in order to get an infinite loop
+	while(i<=10) //can use a bool set to 1 or not increment in order to get an infinite loop
 	{
 		std::cout << i << std::endl;
 		i++;
