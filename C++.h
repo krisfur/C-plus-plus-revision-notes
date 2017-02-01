@@ -265,6 +265,18 @@ int main() //all of the program happens in main
 
 	
 	
+	//inheritance
+	class YourNewClass: public ClassYouWantToInherit
+	{
+		//put some new properties of this new class here
+		//all properties of the inherited class will now also be properties of the new class (unless they are private!)
+	}
+	
+	
+	
+	
+	
+	
 	return 0;
 }
 
