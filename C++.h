@@ -234,6 +234,29 @@ int main() //all of the program happens in main
 	
 	
 	
+	
+	//defining functions in separate files
+	//in order to put your functions in separate files you need a .cpp file which contains it AND a header .h file which declares it
+	
+	//inside the myFile.h file:
+	#ifndef PROGRAMNAME_MYFILES_H
+	#define PROGRAMNAMe_MYFILES_H
+	void myFunction(variables); //ended with a semicolon ; yuo only declare that the function exist
+	#endif //PROGRAMNAMe_MYFILES_H
+	
+	//then you need to include that header file in both your main.cpp AND your myFile.cpp
+	
+	//inside the myFile.cpp file:
+	#include "myFile.h"
+	void myFunction(variables)
+	{
+		//things that this method does
+	}
+	
+	
+	
+	
+	
 	//classes
 	
 	//create the class OUTSIDE of main (just like methods - better before to not have to pre-declare it)
