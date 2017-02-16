@@ -207,6 +207,10 @@ int main() //all of the program happens in main
 		std::cout << "value of x unknown";
 	}
 	
+	
+	
+	
+	
 	//functions
 
 	//you put them OUTSIDE of main!
@@ -233,8 +237,6 @@ int main() //all of the program happens in main
 	
 	
 	
-	
-	
 	//defining functions in separate files
 	//in order to put your functions in separate files you need a .cpp file which contains it AND a header .h file which declares it
 	
@@ -256,36 +258,81 @@ int main() //all of the program happens in main
 	
 	
 	
+	//"new" keyword
+	//you can declare variables with the "new" keyword to store them in long-term memory/heap, when they're no longer needed remember to delete them
+	float * yourFloat = new float;
+	delete yourFloat;
+	//if you don't delete it you will eventually cause a memeory leak which is VERY BAD!
+	
+	
+	
+	
+	
+	//stream states
+	//when using a console I/O stream or a file I/O we deal with stream states
+	//good - all went well, previous operation succeded, next one may proceed
+	//fail - something went wrong, operations before this one may have been ok and might be readable, but this one is bad and no other ones can be good
+	//bad - something went wrong, all is lost, nothing survived
+	//eof - end of file, you have read the last item from a file
+	
+	#include <fstream> //to use file stream
+	std::ifstream yourInputFile("C://filename.dat");
+	std::ofstream yourOutputFile("C://filename2.dat");
+	int i;
+	while (!yourInputfile.eof) //as long as the file hasn't ended, run the loop
+	{
+		yourInputFile >> i; //store the read-out in variable i
+		yourOutputFile << i << std::endl; //output the read-out into a file
+	}
+	
+	
+	
+	
+	
+	
 	
 	//classes
 	
 	//create the class OUTSIDE of main (just like methods - better before to not have to pre-declare it)
-	class className
+	class myClass
 	{
-		//properties public or private
-		//public can be called from outside the class, private can't and are used for inside calculations and such
-		std::string name;
-		double length;
-		int age;
+		public:
+			myClass() {;} //a constructor, put in brackets things to initialise when class is called
+			~myClass() {;} //a deconstructor, put in things to happen when class is no longer used, i.e. clear used memory
+			int publicData; //some integer to be accessed by anyone
+			int function() const; //some function belonging to the public parts of this class
+		protected:
+			int privateData; //some integer to be accessed only by this class and classess which inherit this class
+		private:
+		 int superPrivateData; //this is only available within this class
+	};
+	//a definition for the function inside this class:
+	int myClass::function() const 
+	{
+		return privateData;
 	}
-	//in main call it like this:
-	className object1; //declare a new object called object1 based on class className
-	className object2;
+
+	
+	//you can create objects and access their properties using dot notation:
+	myClass object1; //declare a new object called object1 based on class className
+	myClass object2;
+	object1.publicData = 3;
+	int v = object1.function();
+	
+	//or using pointer notation:
+	className * object3 = new className();
+	int v = object3->function();
 	
 	//specify properties for object1
 	object1.name = "John";
 	object1.length=22.4;
 	object1.age=13;
 	
-	//same for object 2
-	object1.name = "Morgan";
-	object1.length=28.9;
-	object1.age=19;	
-	
 	//then you can easily call those properties
 	std::cout << "Name of object 1 is: " << object1.name << std::endl;
 	std::cout << "Sum of ages of object1 and object2" << object1.age+object2.age << std::endl;
-
+	
+	
 	
 	
 	//inheritance
