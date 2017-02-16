@@ -134,6 +134,24 @@ int main() //all of the program happens in main
 	
 	
 	
+	//vectors
+	//vectors are like arrays, but it's hard to change items inside, only the ones at the end
+	//they protect you from errors of calling an item beyond the indexes in the list
+	#inluce<vector>
+	vector<float> myVector; //declare with vector<type> name
+	float f = myVector[2]; //gets 3rd item in vector
+	float g = myvector.at(2); //also gets 3rd item in vector
+	myVector.push_back(10.5); //adds 10.5 at the end of the vector
+	int k = myVector.size(); //stores in k the size of the vector
+	myVector.pop_back(); //remove last item
+	myVector.resize(100); //sets the size to 100 filling with default values
+	myVector.reserve(100); //reserves 100 memory spaces without inputting numbers
+	myVector.capacity(); //tells you how much memory the vector has reserved
+	myVector.clear(); //clears all items in the vector
+	
+	
+	
+	
 	//conditionals
 	int i = 1;
 	int j = 2;
