@@ -137,6 +137,7 @@ int main() //all of the program happens in main
 	//vectors
 	//vectors are like arrays, but it's hard to change items inside, only the ones at the end
 	//they protect you from errors of calling an item beyond the indexes in the list
+	//vectors can contain both basic-types as well as user defined types (objects)
 	#inluce<vector>
 	vector<float> myVector; //declare with vector<type> name
 	float f = myVector[2]; //gets 3rd item in vector
@@ -148,6 +149,25 @@ int main() //all of the program happens in main
 	myVector.reserve(100); //reserves 100 memory spaces without inputting numbers
 	myVector.capacity(); //tells you how much memory the vector has reserved
 	myVector.clear(); //clears all items in the vector
+	
+	//iterating over a std::vector
+	//for loop
+	for(int i=0;i<myVector.size();++i)
+	{
+		//stuff
+	}
+	
+	//iterator
+	for(Iter it = myVector.begin(); it!=myVec.end(); ++it)
+	{
+		//stuff
+	}
+	
+	//C++11 auto loop
+	for(auto value : vec)
+	{
+		//stuff using value
+	}
 	
 	
 	
@@ -224,6 +244,37 @@ int main() //all of the program happens in main
 	default:
 		std::cout << "value of x unknown";
 	}
+	
+	
+	
+	
+	//random number generation
+	
+	//uniform distribution
+	#include <cstdlib>
+	float min;
+	float max;
+	flaot rnd = min + (max-min) * (double)rand()/RAND_MAX; 
+	//get a uniformly distributed random numbers between min and max
+	
+	//normal distribution - C++11
+	#include <random>
+	std::default_random_engine de(time(0)); //set seed
+	std::normal_distribution<float> nd(70,10); //mean, standard deviation
+	float random = nd(de);
+	
+	
+	
+	
+	//pointers and references
+	//references
+	float x = 2;
+	float &z = x;
+	//z now also call data stored at address x, without making a copy - you just add a different name to call it by
+	
+	//pointers
+	float *p = x; //pointer to float x - points to the address of the variable x, stored in hexadecimal format
+	float y = *p; //dereferencing pointer p - gives you back the value stored at address of x, so value of x
 	
 	
 	
@@ -315,20 +366,33 @@ int main() //all of the program happens in main
 	class myClass
 	{
 		public:
-			myClass() {;} //a constructor, put in brackets things to initialise when class is called
+			myClass(float x =1/*default value*/) : x(x) {;} //a constructor, put in brackets things to initialise when class is called
 			~myClass() {;} //a deconstructor, put in things to happen when class is no longer used, i.e. clear used memory
 			int publicData; //some integer to be accessed by anyone
 			int function() const; //some function belonging to the public parts of this class
 		protected:
 			int privateData; //some integer to be accessed only by this class and classess which inherit this class
 		private:
-		 int superPrivateData; //this is only available within this class
+			float x;
+			int superPrivateData; //this is only available within this class
 	};
+	
 	//a definition for the function inside this class:
 	int myClass::function() const 
 	{
 		return privateData;
 	}
+	
+
+	
+	//you can put a class in a namespace to avoid calling multiple classes the same name
+	Namespace MyNamespace
+	{
+		class myClass //...
+	}
+	//call it
+	MyNamespace::myClass
+
 
 	
 	//you can create objects and access their properties using dot notation:
@@ -349,6 +413,8 @@ int main() //all of the program happens in main
 	//then you can easily call those properties
 	std::cout << "Name of object 1 is: " << object1.name << std::endl;
 	std::cout << "Sum of ages of object1 and object2" << object1.age+object2.age << std::endl;
+	
+	
 	
 	
 	
